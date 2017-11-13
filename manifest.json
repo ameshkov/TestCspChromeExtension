@@ -1,0 +1,26 @@
+{
+  "name": "Test extension",
+  "version": "1.0",
+  "description": "Just testing",
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },  
+  "content_scripts": [
+    {
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
+		  	"match_about_blank": true,
+      "js": [
+        "page.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2
+}
